@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">静谧App</string>
+
+    <string name="guide">引导页</string>
+    <string name="experience">立即体验</string>
+    <string name="music">音乐</string>
+    <string name="discover">发现</string>
+    <string name="clock">闹铃</string>
+    <string name="mine">我的</string>
+</resources>

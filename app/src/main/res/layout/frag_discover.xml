@@ -2,11 +2,56 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="音乐" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1">
+
+        </View>
+
+        <ImageView
+            android:id="@+id/home_search"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@drawable/btn_activate_bg"
+            android:padding="10dp"
+            android:src="@mipmap/home_icon_search" />
+    </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="发现"
-        android:textSize="24sp" />
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:text="搜索"
+        android:textSize="45sp"/>
+
+    <TextView
+        android:id="@+id/recommend"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:text="推荐音乐"
+        android:textSize="45sp" />
+    <TextView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:text="排行榜"
+        android:textSize="45sp" />
 </LinearLayout>

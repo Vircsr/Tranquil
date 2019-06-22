@@ -2,11 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
-
+    android:orientation="vertical">
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="闹铃"
-        android:textSize="24sp" />
+        android:id="@+id/clock1"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:text="闹铃1"
+        android:textSize="45sp"/>
+    <TextView
+        android:id="@+id/clock2"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:text="闹铃2"
+        android:textSize="45sp"/>
+    <TextView
+        android:id="@+id/newClock"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:text="新建"
+        android:textSize="45sp" />
+
 </LinearLayout>

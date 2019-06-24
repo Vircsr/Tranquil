@@ -21,8 +21,8 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
     public TextView search;
     @ViewInject(R.id.recommend)
     public TextView recommend;
-    @ViewInject(R.id.list)
-    public TextView list;
+    //@ViewInject(R.id.list)
+    //public TextView list;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -32,8 +32,8 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
         search.setOnClickListener(this);
         recommend = view.findViewById(R.id.recommend);
         recommend.setOnClickListener(this);
-        list = view.findViewById(R.id.list);
-        list.setOnClickListener(this);
+        //list = view.findViewById(R.id.list);
+        //list.setOnClickListener(this);
         return view;
     }
 
@@ -54,9 +54,9 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
             case R.id.recommend://跳到推荐界面
                 startActivity(new Intent(getActivity(), MusicListActivity.class));
                 break;
-            case R.id.list:// 跳到排行榜
-                startActivity(new Intent(getActivity(),MusicListActivity.class));
-                break;
+            //case R.id.list:// 跳到排行榜
+            //    startActivity(new Intent(getActivity(),MusicListActivity.class));
+            //    break;
             default:
                 startActivity(new Intent(getActivity(),MusicListActivity.class));
                 break;

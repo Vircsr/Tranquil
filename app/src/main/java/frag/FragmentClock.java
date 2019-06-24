@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.tranquil.MusicListActivity;
 import com.example.tranquil.R;
 import com.example.tranquil.SetAlarmActivity;
 import com.lidroid.xutils.ViewUtils;

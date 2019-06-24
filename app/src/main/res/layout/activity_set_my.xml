@@ -3,13 +3,102 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/grey"
     tools:context=".SetMyActivity">
 
+    <!--
+    第一个线性布局
+    设置页面顶栏
+    -->
 
-    <TextView
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/setMyBack"
+            android:layout_width="39dp"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/ic_arrow_back_black_24dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="373dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="设置"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+    
+    
+    <!--
+    分割部分 用来在名称和手机号之间形成一个空隙
+    -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    
+    <!--
+    第二个线性布局
+    设置名称
+    -->
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="设置我的界面"
-        android:textSize="24sp" />
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/setMyName"
+            android:layout_width="411dp"
+            android:layout_height="63dp"
+            android:gravity="center_vertical"
+            android:text="名称"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <!--
+    分割部分 用来在名称和手机号之间形成一个空隙
+    -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <!--
+    第三个线性布局
+    设置名称
+    -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/setMyPhoneNumber"
+            android:layout_width="411dp"
+            android:layout_height="63dp"
+            android:gravity="center_vertical"
+            android:text="手机号"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
 </LinearLayout>

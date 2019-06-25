@@ -1,25 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <TextView
-        android:id="@+id/clock1"
-        android:layout_width="match_parent"
-        android:layout_height="84dp"
-        android:text="闹铃1"
-        android:textSize="45sp"/>
-    <TextView
-        android:id="@+id/clock2"
-        android:layout_width="match_parent"
-        android:layout_height="84dp"
-        android:text="闹铃2"
-        android:textSize="45sp"/>
-    <TextView
-        android:id="@+id/newClock"
-        android:layout_width="match_parent"
-        android:layout_height="84dp"
-        android:text="新建"
-        android:textSize="45sp" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/clockTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+
+            android:padding="10dp"
+            android:text="@string/clock"
+            android:textSize="@dimen/fontsize50" />
+
+        <ImageView
+            android:id="@+id/clockadd"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="17dp"
+            android:src="@android:drawable/ic_input_add"/>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/clockList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="100dp" />
 </LinearLayout>

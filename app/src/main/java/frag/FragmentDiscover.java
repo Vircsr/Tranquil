@@ -28,7 +28,7 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=LayoutInflater.from(getActivity()).inflate(R.layout.frag_discover,null);
         ViewUtils.inject(getActivity());
-        search = view.findViewById(R.id.search);
+        //search = view.findViewById(R.id.search);
         search.setOnClickListener(this);
         recommend = view.findViewById(R.id.recommend);
         recommend.setOnClickListener(this);

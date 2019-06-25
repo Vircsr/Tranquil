@@ -11,13 +11,13 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 public class MusicListActivity extends AppCompatActivity {
 
 
-    public TextView page;
+    //public TextView page;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_music_list);
-        page=findViewById(R.id.page);
+        setContentView(R.layout.activity_music_list);//
+        // page=findViewById(R.id.page);
         Intent intent=getIntent();
         //Jump(Integer.parseInt(intent.getStringExtra("page")));
     }

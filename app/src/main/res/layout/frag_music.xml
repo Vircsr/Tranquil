@@ -2,43 +2,51 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:divider="@drawable/divider"
+    android:showDividers="middle">
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="90dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="101dp"
-            android:layout_height="fill_parent"
-            android:gravity="center_vertical"
-            android:padding="10dp"
-            android:text="音乐"
-            android:textColor="@color/white" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textView0"
+    <Button
+        android:id="@+id/local_music"
         android:layout_width="match_parent"
-        android:layout_height="83dp"
-        android:text="收藏"
-        android:textSize="45sp" />
+        android:layout_height="wrap_content"
+        android:background="@color/transpparent"
+        android:gravity="left|center_vertical"
+        android:padding="10dp"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@drawable/ic_local_music_24dp"
+        android:text="本地音乐" />
 
-    <TextView
-        android:id="@+id/textView1"
+    <Button
+        android:id="@+id/nearest_music"
         android:layout_width="match_parent"
-        android:layout_height="84dp"
-        android:text="已购音乐"
-        android:textSize="45sp" />
+        android:layout_height="wrap_content"
+        android:background="@color/transpparent"
+        android:gravity="left|center_vertical"
+        android:padding="10dp"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@drawable/ic_slow_motion_video_black_24dp"
+        android:text="最近播放" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <Button
+        android:id="@+id/download_music"
         android:layout_width="match_parent"
-        android:layout_height="84dp"
-        android:text="本地音乐"
-        android:textSize="45sp" />
+        android:layout_height="wrap_content"
+        android:background="@color/transpparent"
+        android:gravity="left|center_vertical"
+        android:padding="10dp"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@drawable/ic_download_black_24dp"
+        android:text="下载管理" />
 
+    <Button
+        android:id="@+id/favor_music"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transpparent"
+        android:gravity="left|center_vertical"
+        android:padding="10dp"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@drawable/ic_star_24dp"
+        android:text="我的收藏" />
 </LinearLayout>

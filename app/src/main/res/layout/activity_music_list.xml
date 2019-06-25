@@ -3,14 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    tools:context=".MusicListActivity">
+    android:gravity="center|fill"
+    android:orientation="vertical"
+    tools:context=".MusicListActivity" >
 
+    <Button
+        android:id="@+id/play_all"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/transpparent"
+        android:gravity="left|center_vertical"
+        android:drawableLeft="@drawable/ic_play_circle_outline_black_24dp"
+        android:text="Button"
+        tools:text="播放全部" />
 
-<TextView
-    android:id="@+id/page"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="音乐列表"
-    android:textSize="24sp" />
+    <ListView
+        android:id="@+id/music_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>

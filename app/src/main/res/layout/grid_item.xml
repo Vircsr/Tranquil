@@ -5,11 +5,12 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/grid_id"
+        android:id="@+id/image_id"
         android:layout_width="match_parent"
         android:layout_height="126dp" />
 
     <TextView
+        android:id="@+id/text_id"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_marginTop="7dp"

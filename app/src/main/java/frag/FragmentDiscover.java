@@ -49,7 +49,7 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
                 // 跳转到音乐播放界面
                 Intent intent = new Intent(getActivity(),
                         PlayerActivity.class);
-                intent.putExtra("musicId", position);//携带参数
+                //intent.putExtra("musicId", position);//携带参数
                 startActivity(intent);
 
             }
@@ -85,7 +85,6 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
     private static ArrayList<MusicInfo> LoadMusic(){
         ArrayList<String> imgPath = new ArrayList<>();
 
-        imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/9.jpg");
         imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/8.png");
         imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/7.png");
         imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/6.png");

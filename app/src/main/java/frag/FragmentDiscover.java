@@ -85,7 +85,6 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
     private static ArrayList<MusicInfo> LoadMusic(){
         ArrayList<String> imgPath = new ArrayList<>();
 
-        imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/9.jpg");
         imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/8.png");
         imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/7.png");
         imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/6.png");

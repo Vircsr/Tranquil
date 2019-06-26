@@ -14,7 +14,7 @@
         android:background="@color/transpparent"
         android:gravity="left|center_vertical"
         android:drawableLeft="@drawable/ic_play_circle_outline_black_24dp"
-        android:text="Button"
+        android:text="播放全部"
         tools:text="播放全部" />
 
     <ListView

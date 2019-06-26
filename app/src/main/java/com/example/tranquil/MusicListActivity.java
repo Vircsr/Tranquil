@@ -33,7 +33,7 @@ public class MusicListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MusicListActivity.this,PlayerActivity.class);
-                intent.putExtra("musicId", position);//携带参数
+                //intent.putExtra("musicId", position);//携带参数
                 startActivity(intent);
             }
         });
@@ -75,11 +75,36 @@ public class MusicListActivity extends AppCompatActivity {
         music_5.setName("Way back Home");
         music_5.setSinger("熊佳星");
 
+        Music music_6 = new Music();
+        music_6.setName("心如止水");
+        music_6.setSinger("Ice");
+
+        Music music_7 = new Music();
+        music_7.setName("盛夏的果实");
+        music_7.setSinger("莫文蔚");
+
+        Music music_8 = new Music();
+        music_8.setName("爱的就是你");
+        music_8.setSinger("王力宏");
+
+        Music music_9 = new Music();
+        music_9.setName("起风了");
+        music_9.setSinger("买辣椒");
+
+        Music music_10 = new Music();
+        music_10.setName("Way back Home");
+        music_10.setSinger("熊佳星");
+
         musicArrayList.add(music_1);
         musicArrayList.add(music_2);
         musicArrayList.add(music_3);
         musicArrayList.add(music_4);
         musicArrayList.add(music_5);
+        musicArrayList.add(music_6);
+        musicArrayList.add(music_7);
+        musicArrayList.add(music_8);
+        musicArrayList.add(music_9);
+        musicArrayList.add(music_10);
         return musicArrayList;
     }
 }

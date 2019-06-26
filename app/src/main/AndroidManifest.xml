@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SetMyActivity"></activity>
+        <activity android:name=".RemindWayActivity"></activity>
+        <activity android:name=".RingActivity" />
+        <activity android:name=".SetMyActivity" />
         <activity android:name=".SetAlarmActivity" />
         <activity android:name=".PurchaseActivity" />
         <activity android:name=".MusicListActivity" />

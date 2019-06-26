@@ -11,9 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_background"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="230dp"
         tools:ignore="VectorDrawableCompat" />
 
     <LinearLayout
@@ -95,7 +97,7 @@
             android:layout_weight="1"
             android:text="00:00" />
 
-        <ProgressBar
+        <SeekBar
             android:id="@+id/listen_bar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="279dp"
@@ -180,24 +182,22 @@
 
     </LinearLayout>
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="250dp" />
-
     <ImageView
         android:id="@+id/record"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/guideline7"
-        app:layout_constraintVertical_bias="0.525"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/inform_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_line"
+        app:layout_constraintVertical_bias="0.35000002"
         app:srcCompat="@mipmap/ic_launcher_round"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="171dp" />
+        tools:ignore="MissingConstraints" />
 
 
 </android.support.constraint.ConstraintLayout>

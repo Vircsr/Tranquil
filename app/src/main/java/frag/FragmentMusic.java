@@ -4,18 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-//import android.support.v4.app.ListFragment;
-//import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-
+import com.example.tranquil.MusicListActivity;
 import com.example.tranquil.R;
-import com.example.tranquil.SetMyActivity;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
+
+//import android.support.v4.app.ListFragment;
+//import android.util.Log;
 
 public class FragmentMusic extends Fragment implements View.OnClickListener{
     @ViewInject(R.id.local_music)
@@ -54,16 +54,16 @@ public class FragmentMusic extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.local_music:
-                startActivity(new Intent(getActivity(), SetMyActivity.class));
+                startActivity(new Intent(getActivity(), MusicListActivity.class));
                 break;
             case R.id.nearest_music:
-                startActivity(new Intent(getActivity(), SetMyActivity.class));
+                startActivity(new Intent(getActivity(), MusicListActivity.class));
                  break;
             case R.id.download_music:
-                startActivity(new Intent(getActivity(), SetMyActivity.class));
+                startActivity(new Intent(getActivity(), MusicListActivity.class));
                 break;
             case R.id.favor_music:
-                startActivity(new Intent(getActivity(), SetMyActivity.class));
+                startActivity(new Intent(getActivity(), MusicListActivity.class));
                 break;
             default:
                 break;

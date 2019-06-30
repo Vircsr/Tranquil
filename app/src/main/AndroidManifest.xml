@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RemindWayActivity"></activity>
+        <activity android:name=".AlarmAlert" />
+        <activity android:name=".RemindWayActivity" />
         <activity android:name=".RingActivity" />
         <activity android:name=".SetMyActivity" />
         <activity android:name=".SetAlarmActivity" />
@@ -28,6 +29,7 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".WhatsNewActivity" />
+        <receiver android:name=".CallAlarm" android:process=".remote"></receiver>
     </application>
 
 </manifest>

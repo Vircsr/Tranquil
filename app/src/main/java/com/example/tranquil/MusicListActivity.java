@@ -2,6 +2,7 @@ package com.example.tranquil;
 
 import android.Manifest;
 import android.content.Intent;
+
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
@@ -31,10 +32,12 @@ public class MusicListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_music_list);//
+        setContentView(R.layout.activity_music_list);
+        init();
         // page=findViewById(R.id.page);
         //Intent intent=getIntent();
         //Jump(Integer.parseInt(intent.getStringExtra("page")));
+
         musicListView= findViewById(R.id.music_list);
         musicListView.setAdapter(new ListViewAdapter(this,LoadMusicList()));
         musicListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -59,6 +62,11 @@ public class MusicListActivity extends AppCompatActivity {
             },1);
         }
     }
+
+    private void init(){
+
+    }
+
     public void Jump(int id){
         switch (id){
             case 0:

@@ -21,6 +21,7 @@ public class WhatsNewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_whats_new);
+        getSupportActionBar().hide();//隐藏顶部栏
         viewPager=findViewById(R.id.view_pager);
         btnstart=findViewById(R.id.start_btn);
         //开启监听事件，点击后跳转到主界面

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="8dp"
+    android:paddingHorizontal="@dimen/pad_hor"
+    android:paddingTop="@dimen/pad_top"
+    >
+
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:maxHeight="250dp"
+        app:srcCompat="@drawable/titleitem" />
+
+    <view.inputView
+        android:id="@+id/input_user"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/inputviewHeight"
+        android:layout_marginTop="@dimen/pad_ver"
+        app:input_icon="@drawable/ic_user"
+        app:input_hint="用户账号"
+        app:is_password="false"></view.inputView>
+
+    <View style="@style/d_line"/>
+    <view.inputView
+        android:id="@+id/input_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/inputviewHeight"
+        app:input_icon="@drawable/ic_password_24dp"
+        app:input_hint="密码"
+        app:is_password="true"></view.inputView>
+    <View style="@style/d_line"/>
+    
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/pad_ver"
+        android:text="立即注册"
+        android:layout_gravity="center"
+        android:textSize="@dimen/infosize"
+        android:textColor="@color/mainColor"
+        android:onClick="onRegisterClick"
+        />
+    <Button
+        style="@style/commitBtn"
+        android:text="登  录"
+        android:layout_marginTop="@dimen/pad_ver"
+        android:onClick="onCommitClick"
+        />
+</LinearLayout>

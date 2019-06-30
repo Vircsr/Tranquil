@@ -17,7 +17,7 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        getSupportActionBar().hide();
+        getSupportActionBar().hide();//隐藏顶部栏
         //线程休眠
         new Handler(new Handler.Callback() {
             @Override
@@ -25,7 +25,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 if(Toolkits.fetchBooble(WelcomeActivity.this,IS_FIRST,false)){
                     startActivity(new Intent(WelcomeActivity.this,WhatsNewActivity.class));
                 }else {
-                    startActivity(new Intent(WelcomeActivity.this,MainActivity.class));
+                    startActivity(new Intent(WelcomeActivity.this,LoginActivity.class));
                 }
                 Toolkits.putBooble(WelcomeActivity.this,IS_FIRST,true);
                 return true;
@@ -33,3 +33,4 @@ public class WelcomeActivity extends AppCompatActivity {
         }).sendEmptyMessageDelayed(0,3000);
     }
 }
+

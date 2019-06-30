@@ -1,11 +1,13 @@
 package com.example.tranquil;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -23,7 +25,7 @@ import java.io.IOException;
 public class PlayerActivity extends AppCompatActivity {
 
     private ImageView recordView;
-    private ImageView listemView;
+    private ImageView listenView;
 
     private MediaPlayer mediaPlayer;
     private SeekBar seekBar;
@@ -46,8 +48,8 @@ public class PlayerActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         recordView = findViewById(R.id.record);
         seekBar = findViewById(R.id.listen_bar);
-        listemView = findViewById(R.id.listen_or_not);
-        listemView.setOnClickListener(new View.OnClickListener() {
+        listenView = findViewById(R.id.listen_or_not);
+        listenView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (v.getId()){
@@ -56,8 +58,14 @@ public class PlayerActivity extends AppCompatActivity {
                 }
             }
         });
+        Intent intent = getIntent();
+        Bundle bundle = intent.getBundleExtra("data");
+        String path = bundle.getString("path");
+        Log.i("Info","Running here");
+        Log.i("PlayActivity获取的path",path);
+
         rotateRecode();
-        InitMediaPlayer();
+        InitMediaPlayer(path);
         InitSeekBar();
     }
 
@@ -72,18 +80,17 @@ public class PlayerActivity extends AppCompatActivity {
         recordView.startAnimation(animation);
     }
 
-    public void InitMediaPlayer() {
-        mediaPlayer = new MediaPlayer();
-
+    public void InitMediaPlayer(String path) {
+        mediaPlayer= new MediaPlayer();
         //加载资源文件
-        String path = "https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/love.mp3";
+        //String path = "https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/love.mp3";
         try {
             mediaPlayer.setDataSource(path);
             mediaPlayer.prepareAsync();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        mediaPlayer.start();
     }
     public void InitSeekBar(){
         //tv.setText(convert(mediaPlayer.getDuration()));

@@ -9,6 +9,7 @@ import android.media.Image;
  * param3 歌手
  * param4 封面照片
  * param5 歌词
+ * param6 歌曲路径
  */
 public class Music {
     private int id;
@@ -16,6 +17,7 @@ public class Music {
     private String singer;
     private Image image;
     private String Lyrics;
+    private String path;
 
     public void setId(int id) {
         this.id = id;
@@ -47,7 +49,10 @@ public class Music {
     public Image getImage() {
         return image;
     }
-
-
-
+    public void setPath(String path) {
+        this.path = path;
+    }
+    public String getPath() {
+        return path;
+    }
 }

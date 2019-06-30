@@ -5,4 +5,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="transpparent">#00000000</color>
+    <color name="grey">#F0ECEC</color>
+    <color name="blue">#FF000BFF</color>
 </resources>
+

@@ -17,14 +17,14 @@ import com.lidroid.xutils.view.annotation.ViewInject;
 
 public class FragmentMy extends Fragment implements View.OnClickListener {
 
-    @ViewInject(R.id.setMy)
+    @ViewInject(R.id.setPassword)
     public TextView setmy;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=LayoutInflater.from(getActivity()).inflate(R.layout.frag_my,null);
         ViewUtils.inject(getActivity());
-        setmy = view.findViewById(R.id.setMy);
+        setmy = view.findViewById(R.id.setPassword);
         setmy.setOnClickListener(this);
         return view;
     }
@@ -41,7 +41,7 @@ public class FragmentMy extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.setMy:
+            case R.id.setPassword:
                 startActivity(new Intent(getActivity(), SetMyActivity.class));
         }
     }

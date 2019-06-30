@@ -29,6 +29,6 @@ public class WelcomeActivity extends AppCompatActivity {
                 Toolkits.putBooble(WelcomeActivity.this,IS_FIRST,true);
                 return true;
             }
-        }).sendEmptyMessageDelayed(0,3000);
+        }).sendEmptyMessageDelayed(0,30);//为测试方便设置更短的测试时间
     }
 }

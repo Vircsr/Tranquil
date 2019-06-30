@@ -139,8 +139,8 @@
     <Button
         style="@style/commitBtn"
         android:text="退出登录"
+        android:id="@+id/exitBtn"
         android:layout_marginTop="@dimen/pad_ver"
-        android:onClick="onExitClick"
         />
 
 </LinearLayout>

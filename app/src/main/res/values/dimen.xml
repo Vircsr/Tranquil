@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <dimen name="fontsize13">13dp</dimen>
     <dimen name="fontsize20">20dp</dimen>
     <dimen name="fontsize25">25dp</dimen>
@@ -8,4 +9,12 @@
     <dimen name="fontsize50">50dp</dimen>
     <dimen name="padding10">10dp</dimen>
     <dimen name="padding15">15dp</dimen>
+
+    <dimen name="lyrics_bor">20dp</dimen>
+    <dimen name="lyrics_size">220dp</dimen>
+    <dimen name="buttom_list_height">350dp</dimen>
+    <dimen name="navbarHeight">56dp</dimen>
+    <dimen name="pad_hor">20dp</dimen>
+    <dimen name="pad_ver">10dp</dimen>
+    <dimen name="pad_top">50dp</dimen>
 </resources>

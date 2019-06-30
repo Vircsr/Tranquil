@@ -2,4 +2,9 @@
 <resources>
     <dimen name="music_item_heigth" >30dp</dimen>
     <dimen name="pad_left">8dp</dimen>
+    <dimen name="titlesize">18sp</dimen>
+    <dimen name="infosize">14sp</dimen>
+    <dimen name="inputviewHeight">44dp</dimen>
+    <dimen name="btnHeight">44dp</dimen>
+    <dimen name="radius">5dp</dimen>
 </resources>

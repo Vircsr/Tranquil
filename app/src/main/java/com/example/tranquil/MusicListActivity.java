@@ -1,18 +1,27 @@
 package com.example.tranquil;
 
+import android.Manifest;
 import android.content.Intent;
+
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.lidroid.xutils.view.annotation.ViewInject;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import adapter.ListViewAdapter;
 import entity.Music;
+
 
 public class MusicListActivity extends AppCompatActivity {
 
@@ -23,21 +32,41 @@ public class MusicListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_music_list);//
+        setContentView(R.layout.activity_music_list);
+        init();
         // page=findViewById(R.id.page);
         //Intent intent=getIntent();
         //Jump(Integer.parseInt(intent.getStringExtra("page")));
+
         musicListView= findViewById(R.id.music_list);
         musicListView.setAdapter(new ListViewAdapter(this,LoadMusicList()));
         musicListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                ListView listView = (ListView) parent;
+                ListAdapter listAdapter = listView.getAdapter();
+                Music music = (Music) listAdapter.getItem(position);
+
                 Intent intent = new Intent(MusicListActivity.this,PlayerActivity.class);
-                //intent.putExtra("musicId", position);//携带参数
+                Bundle bundle = new Bundle();
+                bundle.putString("path",music.getPath());
+                intent.putExtra("data",bundle);
                 startActivity(intent);
             }
         });
+
+        if(ContextCompat.checkSelfPermission(MusicListActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(MusicListActivity.this,new String[]{
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+            },1);
+        }
     }
+
+    private void init(){
+
+    }
+
     public void Jump(int id){
         switch (id){
             case 0:
@@ -51,60 +80,53 @@ public class MusicListActivity extends AppCompatActivity {
                 break;
         }
     }
-    private static ArrayList<Music> LoadMusicList(){
+    private ArrayList<Music> LoadMusicList(){
 
         ArrayList<Music> musicArrayList = new ArrayList<>();
-
         Music music_1 = new Music();
-        music_1.setName("大哥大哥");
-        music_1.setSinger("熊佳星");
+        music_1 .setName("Honor");
+        music_1 .setSinger("邓紫棋");
+        File file = new File(Environment.getExternalStorageDirectory(),"Honor.mp3");
+        music_1 .setPath(file.getPath());
 
         Music music_2 = new Music();
-        music_2.setName("天后");
-        music_2.setSinger("陈帆");
+        music_2.setName("天使的魔鬼");
+        music_2.setSinger("邓紫棋");
+        music_2.setPath("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/love.mp3");
 
         Music music_3 = new Music();
-        music_3.setName("倒数");
+        music_3.setName("喜欢你");
         music_3.setSinger("邓紫棋");
-
-        Music music_4 = new Music();
-        music_4.setName("喜欢你");
-        music_4.setSinger("邓紫棋");
-
-        Music music_5 = new Music();
-        music_5.setName("Way back Home");
-        music_5.setSinger("熊佳星");
-
-        Music music_6 = new Music();
-        music_6.setName("心如止水");
-        music_6.setSinger("Ice");
-
-        Music music_7 = new Music();
-        music_7.setName("盛夏的果实");
-        music_7.setSinger("莫文蔚");
-
-        Music music_8 = new Music();
-        music_8.setName("爱的就是你");
-        music_8.setSinger("王力宏");
-
-        Music music_9 = new Music();
-        music_9.setName("起风了");
-        music_9.setSinger("买辣椒");
-
-        Music music_10 = new Music();
-        music_10.setName("Way back Home");
-        music_10.setSinger("熊佳星");
-
+        music_3.setPath("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/love.mp3");
         musicArrayList.add(music_1);
         musicArrayList.add(music_2);
         musicArrayList.add(music_3);
-        musicArrayList.add(music_4);
-        musicArrayList.add(music_5);
-        musicArrayList.add(music_6);
-        musicArrayList.add(music_7);
-        musicArrayList.add(music_8);
-        musicArrayList.add(music_9);
-        musicArrayList.add(music_10);
+        /*StringBuffer sb = new StringBuffer();//存放data的缓存
+        //要返回的列（属性）
+        String[] projection = { MediaStore.Audio.Media.DISPLAY_NAME,MediaStore.Audio.Media.ARTIST,MediaStore.Audio.Media.DATA };
+        Cursor cr = this.getContentResolver().query(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
+                                                      projection, null,null, MediaStore.Audio.Media.DISPLAY_NAME);
+        String displayName = null;
+        String singerName=null;
+        String data = null;
+        while (cr.moveToNext()) {//移动到下一刻度，返回boolean类型值
+            displayName = cr.getString(cr.getColumnIndex(MediaStore.Audio.Media.DISPLAY_NAME));//音频文件名
+            singerName = cr.getString(cr.getColumnIndex(MediaStore.Audio.Media.ARTIST));
+            data = cr.getString(cr.getColumnIndex(MediaStore.Audio.Media.DATA));//音频文件路径+文件名
+            if(data!=null&&displayName!=null){
+                data = data.replace(displayName, " ");// 替换文件名留下它的上一级目录
+            }
+
+            if (!sb.toString().contains(data)) {
+                //list.add(new ScanInfo(data, true));//默认全部勾选
+                Music music = new Music();
+                music.setName(displayName);
+                music.setSinger(singerName);
+                music.setPath(data);
+                musicArrayList.add(music);
+                sb.append(data);//加入到缓存里
+            }
+        }*/
         return musicArrayList;
     }
 }

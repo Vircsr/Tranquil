@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 按钮按下状态 -->
+    <item android:state_pressed="true"
+        android:drawable="@color/translucence"
+        />
+    <item android:drawable="@color/transpparent"
+        android:state_enabled="true"/>
+    <!-- 按钮默认状态  -->
+</selector>

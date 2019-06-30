@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.example.tranquil.MusicListActivity;
 import com.example.tranquil.PlayerActivity;
@@ -31,6 +33,12 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
     public TextView recommend;
     @ViewInject(R.id.grid_view)
     public GridView gridView;
+
+////图片轮播效果
+//    private ViewFlipper viewFlipper;
+//    //示例图片
+//    private int[] imgIds = {R.mipmap.test1,R.mipmap.test2,R.mipmap.test3,R.mipmap.test4};
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -40,6 +48,14 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
         search.setOnClickListener(this);
         recommend = view.findViewById(R.id.recommend);
         recommend.setOnClickListener(this);
+//        //viewFlipper测试
+//        viewFlipper = view.findViewById(R.id.view_flipper);
+//        for(int i=0;i<imgIds.length;i++){
+//            viewFlipper.addView(getImageView(imgIds[i]));
+//        }
+//        viewFlipper.setInAnimation(getActivity(),R.anim.flipper_in);
+//        viewFlipper.setOutAnimation(getActivity(),R.anim.flipper_out);
+//        //initViewFlipper();
         gridView=view.findViewById(R.id.grid_view);
         gridView.setAdapter(new GridViewAdapter(getActivity(),LoadMusic()));
         //gridView.setOnClickListener(this);
@@ -103,5 +119,22 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
         }
         return musicInfos;
     }
+
+//    private void initViewFlipper(){
+//
+//    }
+//
+//    private ImageView getImageView(int resId) {
+//        ImageView image = new ImageView(getActivity());
+//        /*
+//         * //按图片原大小展示
+//         * image.setImageResource(resId);
+//         **/
+//
+//        // 全屏显示图片
+//        image.setBackgroundResource(resId);
+//        return  image;
+//    }
+
 }
 

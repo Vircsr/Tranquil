@@ -2,11 +2,17 @@
 <resources>
     <color name="white">#ffffff</color>
     <color name="orange">#ffff6900</color>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryDark">#04018F</color>
+    <color name="colorPrimary">#0500DD</color>
     <color name="colorAccent">#D81B60</color>
     <color name="transpparent">#00000000</color>
+    <color name="translucence">#59000000</color>
     <color name="grey">#F0ECEC</color>
     <color name="blue">#FF000BFF</color>
+    <color name="black">#000000</color>
+    <color name="app_color_whrit">#55FCFCFC</color>
+    <color name="lineColor">#c3c3c3</color>
+    <color name="mainColor">#04018F</color>
+    <color name="mainColorH">#0500DD</color>
 </resources>
 

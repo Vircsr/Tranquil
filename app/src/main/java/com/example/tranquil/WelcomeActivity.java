@@ -33,3 +33,4 @@ public class WelcomeActivity extends AppCompatActivity {
         }).sendEmptyMessageDelayed(0,3000);
     }
 }
+

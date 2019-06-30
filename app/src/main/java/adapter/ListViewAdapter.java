@@ -41,6 +41,7 @@ public class ListViewAdapter extends BaseAdapter {
     static class ViewHolder{
         public TextView song_textview;
         public TextView singer_textview;
+        public TextView path_textview;
     }
 
     @Override
@@ -55,6 +56,7 @@ public class ListViewAdapter extends BaseAdapter {
             //获取控件对象
             holder.song_textview=convertView.findViewById(R.id.song);
             holder.singer_textview=convertView.findViewById(R.id.singer);
+            holder.path_textview=convertView.findViewById(R.id.path);
             convertView.setTag(holder);
 
         }else{
@@ -63,6 +65,7 @@ public class ListViewAdapter extends BaseAdapter {
         Music music = musicList.get(position);
         holder.song_textview.setText(music.getName());
         holder.singer_textview.setText(music.getSinger());
+        holder.path_textview.setText(music.getPath());
 
         return convertView;
     }

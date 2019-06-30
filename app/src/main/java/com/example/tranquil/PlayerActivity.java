@@ -35,6 +35,7 @@ public class PlayerActivity extends AppCompatActivity {
 
     private ImageView recordView;//封面图片
     private ImageButton listenView;
+    private  Intent intent;
 //封面旋转功能
     private ObjectAnimator objectAnimator;
     private static final int STATE_PLAYING = 1;//播放
@@ -62,6 +63,7 @@ public class PlayerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         View view = View.inflate(this,R.layout.activity_player,null);
         setContentView(view);
+        intent = getIntent();
         getSupportActionBar().hide();//隐藏顶部栏
         recordView = findViewById(R.id.record);
         listenView = findViewById(R.id.listen_or_not);
@@ -131,24 +133,28 @@ public class PlayerActivity extends AppCompatActivity {
         objectAnimator.end();
         state = STATE_STOP;
     }
-    public void InitMediaPlayer() {
-        mediaPlayer = new MediaPlayer();
-
+    public void InitMediaPlayer(String path) {
+        mediaPlayer= new MediaPlayer();
         //加载资源文件
-        String path = "https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/love.mp3";
+        //String path = "https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/love.mp3";
         try {
             mediaPlayer.setDataSource(path);
             mediaPlayer.prepareAsync();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        mediaPlayer.start();
     }
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void playOrPause(View view){
         if(mediaPlayer==null) {
             isPlay = true;
-            InitMediaPlayer();
+            
+            Bundle bundle = intent.getBundleExtra("data");
+            String path = bundle.getString("path");
+            Log.i("Info","Running here");
+            Log.i("PlayActivity获取的path",path);
+            InitMediaPlayer(path);
             initRotate();
             mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
                 @Override
@@ -278,75 +284,4 @@ public class PlayerActivity extends AppCompatActivity {
         }
     }
 
-//    public void InitSeekBar(){
-//        //tv.setText(convert(mediaPlayer.getDuration()));
-//        seekBar.setMax(mediaPlayer.getDuration());
-//        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-//
-//            @Override
-//            public void onStopTrackingTouch(SeekBar seekBar) {
-//                // TODO Auto-generated method stub
-//                int progress = seekBar.getProgress();
-//                mediaPlayer.seekTo(progress);
-//                //mediaPlayer.start();
-//            }
-//
-//            @Override
-//            public void onStartTrackingTouch(SeekBar seekBar) {
-//                // TODO Auto-generated method stub
-//
-//            }
-//
-//            @Override
-//            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-//                // TODO Auto-generated method stub
-//                if (fromUser) {
-//                    mediaPlayer.seekTo(progress);
-//                }
-//            }
-//        });
-//    }
 
-
-//    private void start(View view) {
-//        mediaPlayer.start();
-//        new Thread() {
-//            public void run() {
-//                while (true) {
-//                    try {
-//                        Thread.sleep(1000);
-//                    } catch (InterruptedException e) {
-//                        // TODO Auto-generated catch block
-//                        e.printStackTrace();
-//                    }//一秒
-//                    Message msg =
-//                            handler.obtainMessage();
-//                    msg.what = 0x123;
-//                    handler.sendMessage(msg);
-//                }
-//            }
-//
-//            ;
-//        }.start();
-//
-//
-//    }
-
-
-
-//    public void stop(View view) {
-//        mediaPlayer.pause();
-//    }
-
-//    @Override
-//    protected void onDestroy() {
-//        // TODO Auto-generated method stub
-//        if(mediaPlayer!=null&&mediaPlayer.isPlaying()){
-//            mediaPlayer.stop();
-//            mediaPlayer.reset();
-//            mediaPlayer=null;//回收资源
-//        }
-//        super.onDestroy();
-//    }
-
-}

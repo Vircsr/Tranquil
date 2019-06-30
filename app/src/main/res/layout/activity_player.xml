@@ -11,10 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_launcher_background"
+
         tools:ignore="VectorDrawableCompat"
         tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="230dp" />
+
 
     <LinearLayout
         android:id="@+id/player_line"
@@ -198,11 +204,13 @@
 
     </LinearLayout>
 
+
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:circleimageview="http://schemas.android.com/apk/res-auto"
         android:id="@+id/record"
         android:layout_width="@dimen/lyrics_size"
         android:layout_height="@dimen/lyrics_size"
+
 
         app:civ_border_color="@color/black"
         app:civ_border_width="@dimen/lyrics_bor"

@@ -22,6 +22,7 @@ public class Music {
     private Image image;
     private String Lyrics;
 
+
     public void setId(long id) {
         this.id = id;
     }
@@ -94,3 +95,4 @@ public class Music {
         this.album = album;
     }
 }
+

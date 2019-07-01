@@ -38,6 +38,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     implementation files('libs/gson-2.8.5.jar')
 
+
     implementation 'de.hdodenhof:circleimageview:3.0.0'
     implementation 'com.github.CodingEnding:PopupLayout:v1.0'
     implementation 'me.wcy:lrcview:2.0.1'

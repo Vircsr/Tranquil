@@ -34,11 +34,6 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
     @ViewInject(R.id.grid_view)
     public GridView gridView;
 
-////图片轮播效果
-//    private ViewFlipper viewFlipper;
-//    //示例图片
-//    private int[] imgIds = {R.mipmap.test1,R.mipmap.test2,R.mipmap.test3,R.mipmap.test4};
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -48,14 +43,7 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
         search.setOnClickListener(this);
         recommend = view.findViewById(R.id.recommend);
         recommend.setOnClickListener(this);
-//        //viewFlipper测试
-//        viewFlipper = view.findViewById(R.id.view_flipper);
-//        for(int i=0;i<imgIds.length;i++){
-//            viewFlipper.addView(getImageView(imgIds[i]));
-//        }
-//        viewFlipper.setInAnimation(getActivity(),R.anim.flipper_in);
-//        viewFlipper.setOutAnimation(getActivity(),R.anim.flipper_out);
-//        //initViewFlipper();
+
         gridView=view.findViewById(R.id.grid_view);
         gridView.setAdapter(new GridViewAdapter(getActivity(),LoadMusic()));
         //gridView.setOnClickListener(this);
@@ -90,11 +78,7 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
             case R.id.recommend://跳到推荐界面
                 startActivity(new Intent(getActivity(), MusicListActivity.class));
                 break;
-            //case R.id.list:// 跳到排行榜
-            //    startActivity(new Intent(getActivity(),MusicListActivity.class));
-            //    break;
             default:
-                startActivity(new Intent(getActivity(),MusicListActivity.class));
                 break;
         }
     }
@@ -105,9 +89,6 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
         imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/7.png");
         imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/6.png");
         imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/5.jpg");
-        imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/4.png");
-        imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/3.png");
-        imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/2.png");
 
         ArrayList<MusicInfo> musicInfos = new ArrayList<>();
 
@@ -119,22 +100,5 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
         }
         return musicInfos;
     }
-
-//    private void initViewFlipper(){
-//
-//    }
-//
-//    private ImageView getImageView(int resId) {
-//        ImageView image = new ImageView(getActivity());
-//        /*
-//         * //按图片原大小展示
-//         * image.setImageResource(resId);
-//         **/
-//
-//        // 全屏显示图片
-//        image.setBackgroundResource(resId);
-//        return  image;
-//    }
-
 }
 

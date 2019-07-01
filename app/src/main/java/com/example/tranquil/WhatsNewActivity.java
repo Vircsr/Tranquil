@@ -28,7 +28,7 @@ public class WhatsNewActivity extends AppCompatActivity {
         btnstart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(WhatsNewActivity.this,MainActivity.class));
+                startActivity(new Intent(WhatsNewActivity.this,LoginActivity.class));
             }
         });
         //初始化viewpager

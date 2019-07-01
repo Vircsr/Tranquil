@@ -26,9 +26,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 if(Toolkits.fetchBooble(WelcomeActivity.this,IS_FIRST,false)){
                     startActivity(new Intent(WelcomeActivity.this,WhatsNewActivity.class));
                 }else {
-
                     startActivity(new Intent(WelcomeActivity.this,MainActivity.class));
-
                 }
                 Toolkits.putBooble(WelcomeActivity.this,IS_FIRST,true);
                 return true;

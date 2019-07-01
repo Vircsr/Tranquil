@@ -15,7 +15,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/cancel_text"
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
             android:layout_weight="1"
@@ -25,7 +25,6 @@
             android:text="取消" />
 
         <TextView
-            android:id="@+id/textView5"
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
             android:gravity="center"
@@ -34,7 +33,7 @@
             android:text="编辑闹钟" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/sure_text"
             android:layout_height="match_parent"
             android:layout_width="wrap_content"
             android:gravity="center"
@@ -48,13 +47,24 @@
         android:layout_height="wrap_content"
         android:paddingRight="@dimen/padding10"
         android:layout_weight="6"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical">
+
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:timePickerMode="spinner"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="2dp"
+            android:theme="@style/Theme.picker"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="4"
+        android:layout_weight="8"
         android:showDividers="middle"
         android:divider="@color/colorPrimaryDark"
         android:orientation="vertical">
@@ -70,14 +80,14 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/padding10"
                 android:text="重复"
-                android:textSize="@dimen/fontsize25" />
+                android:textSize="@dimen/fontsize20" />
             <TextView
+                android:id="@+id/day_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center|right"
                 android:paddingLeft="@dimen/padding10"
-                android:text="周一周二周三周四"
-                android:textSize="@dimen/fontsize20" />
+                android:textSize="@dimen/fontsize13" />
         </LinearLayout>
 
         <LinearLayout
@@ -86,62 +96,56 @@
             android:paddingLeft="@dimen/padding10"
             android:paddingRight="@dimen/padding10"
             android:orientation="horizontal">
-
-            <RadioGroup
-                android:layout_width="match_parent"
+            <CheckBox
+                android:id="@+id/Mon"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_weight="1"
+                android:text="一" />
 
-                <RadioButton
-                    android:id="@+id/radioButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="一" />
+            <CheckBox
+                android:id="@+id/Tue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="二" />
 
-                <RadioButton
-                    android:id="@+id/radioButton2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="二" />
+            <CheckBox
+                android:id="@+id/Wed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="三" />
 
-                <RadioButton
-                    android:id="@+id/radioButton3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="三" />
+            <CheckBox
+                android:id="@+id/Thu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="四" />
 
-                <RadioButton
-                    android:id="@+id/radioButton4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="四" />
+            <CheckBox
+                android:id="@+id/Fri"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="五" />
 
-                <RadioButton
-                    android:id="@+id/radioButton5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="五" />
+            <CheckBox
+                android:id="@+id/Sat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="六" />
 
-                <RadioButton
-                    android:id="@+id/radioButton6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="六" />
+            <CheckBox
+                android:id="@+id/Sun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="日" />
 
-                <RadioButton
-                    android:id="@+id/radioButton7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="日" />
-            </RadioGroup>
+
         </LinearLayout>
 
         <LinearLayout
@@ -150,6 +154,7 @@
 
             android:orientation="horizontal">
             <TextView
+                android:id="@+id/remindway_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center|left"
@@ -164,6 +169,7 @@
 
             android:orientation="horizontal">
             <TextView
+                android:id="@+id/ring_text"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -172,6 +178,7 @@
                 android:text="铃声"/>
 
             <TextView
+               android:id="@+id/ringname_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center|right"

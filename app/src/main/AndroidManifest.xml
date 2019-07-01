@@ -19,6 +19,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".AlarmAlert" />
+        <activity android:name=".RemindWayActivity" />
+        <activity android:name=".RingActivity" />
+        <activity android:name=".SetMyActivity" />
+        <activity android:name=".SetAlarmActivity" />
+        <activity android:name=".PurchaseActivity" />
+        <activity android:name=".MusicListActivity" />
+        <activity android:name=".PlayerActivity" />
+
         <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,12 +35,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SetMyActivity" />
-        <activity android:name=".SetAlarmActivity" />
-        <activity android:name=".PurchaseActivity" />
-        <activity android:name=".MusicListActivity" />
-        <activity android:name=".PlayerActivity" />
         <activity android:name=".MainActivity" />
+        <receiver android:name=".CallAlarm" android:process=".remote"></receiver>
         <activity android:name=".WhatsNewActivity" />
         <activity android:name=".LoginActivity"/>
         <activity android:name=".RegisterActivity"/>

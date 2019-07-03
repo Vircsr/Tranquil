@@ -74,7 +74,7 @@ public class MainActivity extends FragmentActivity {
                         fragment=new FragmentMy();
                         break;
                     default:
-                        fragment=new FragmentMusic();
+                        fragment=new FragmentDiscover();
                         break;
                 }
                 return fragment;

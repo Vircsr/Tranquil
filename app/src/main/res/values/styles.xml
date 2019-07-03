@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
     <style name="Theme.picker" parent="android:Theme.Holo.NoActionBar">
         <item name="android:editTextStyle">@style/Widget.EditText.White</item>
     </style>
@@ -14,6 +15,25 @@
     <style name="Widget.EditText.White" parent="@android:style/Widget.EditText">
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:textSize">35dp</item>
+
+<!--分割线-->
+    <style name="d_line">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/lineColor</item>
+        <item name="android:layout_margin">@dimen/pad_ver</item>
+    </style>
+    
+    <style name="commitBtn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/btnHeight</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/infosize</item>
+        <item name="android:layout_marginLeft">@dimen/pad_hor</item>
+        <item name="android:layout_marginRight">@dimen/pad_hor</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_commit</item>
+
     </style>
 
     <style name="item_style">

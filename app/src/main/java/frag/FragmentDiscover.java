@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.example.tranquil.MusicListActivity;
 import com.example.tranquil.PlayerActivity;
@@ -31,6 +33,7 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
     public TextView recommend;
     @ViewInject(R.id.grid_view)
     public GridView gridView;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
         search.setOnClickListener(this);
         recommend = view.findViewById(R.id.recommend);
         recommend.setOnClickListener(this);
+
         gridView=view.findViewById(R.id.grid_view);
         gridView.setAdapter(new GridViewAdapter(getActivity(),LoadMusic()));
         //gridView.setOnClickListener(this);
@@ -74,11 +78,7 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
             case R.id.recommend://跳到推荐界面
                 startActivity(new Intent(getActivity(), MusicListActivity.class));
                 break;
-            //case R.id.list:// 跳到排行榜
-            //    startActivity(new Intent(getActivity(),MusicListActivity.class));
-            //    break;
             default:
-                startActivity(new Intent(getActivity(),MusicListActivity.class));
                 break;
         }
     }
@@ -89,9 +89,6 @@ public class FragmentDiscover extends Fragment implements View.OnClickListener{
         imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/7.png");
         imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/6.png");
         imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/5.jpg");
-        imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/4.png");
-        imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/3.png");
-        imgPath.add("https://raw.githubusercontent.com/MLNewbee/OrderingWebsite/master/IMG/2.png");
 
         ArrayList<MusicInfo> musicInfos = new ArrayList<>();
 

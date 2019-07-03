@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--高亮-->
+    <item android:drawable="@color/mainColorH" android:state_focused="true"/>
+    <item android:drawable="@color/mainColorH" android:state_selected="true"/>
+    <item android:drawable="@color/mainColorH" android:state_pressed="true"/>
+    <!--默认-->
+    <item android:drawable="@color/mainColor"/>
+</selector>

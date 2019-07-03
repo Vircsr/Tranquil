@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".AlarmAlert" />
-        <activity android:name=".RemindWayActivity" />
         <activity android:name=".RingActivity" />
         <activity android:name=".SetMyActivity" />
         <activity android:name=".SetAlarmActivity" />

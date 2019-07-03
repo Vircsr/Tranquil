@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -35,7 +36,7 @@ import entity.Clock;
 import static android.content.Context.ALARM_SERVICE;
 import static android.content.Context.MODE_PRIVATE;
 
-public class FragmentClock extends Fragment implements View.OnClickListener {
+public class FragmentClock extends Fragment {
 
     public ImageView clockadd;
     public ListView clockListView;
@@ -47,9 +48,9 @@ public class FragmentClock extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.frag_clock, null);
         ViewUtils.inject(getActivity());
-        clockadd = view.findViewById(R.id.clockadd);
         clockListView = view.findViewById(R.id.clock_List);
         clockListView.setAdapter(new ClockListAdapter(getActivity(), loadClockList()));
         clockListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -62,12 +63,11 @@ public class FragmentClock extends Fragment implements View.OnClickListener {
                 TextView clockringtime=itemview.findViewById(R.id.clock_ringtime);
                 Intent intent=new Intent(getActivity(),SetAlarmActivity.class);
                 intent.putExtra("itemid",number+"th");
-                //Toast.makeText(getActivity(), "dsj"+number, Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getActivity(), "position"+number, Toast.LENGTH_SHORT).show();
                 startActivity(intent);
 
             }
         });
-        clockadd.setOnClickListener(this);
         return view;
     }
 
@@ -80,14 +80,6 @@ public class FragmentClock extends Fragment implements View.OnClickListener {
     }
 
 
-    @Override
-    public void onClick(View v) {
-       switch (v.getId()) {
-            case R.id.clockadd:// 新建界面
-                startActivity(new Intent(getActivity(), SetAlarmActivity.class));
-                break;
-        }
-    }
 
 
     public Clock addClock(int hour,int minute){        //闹钟界面添加闹钟
@@ -98,23 +90,11 @@ public class FragmentClock extends Fragment implements View.OnClickListener {
 
     public ArrayList<Clock> loadClockList() {
         ArrayList<Clock> clockArrayList = new ArrayList<>();
-        // String key="KEY_CLOCK_"+0;
         clockArrayList.add(addClock(0,0));
         clockArrayList.add(addClock(0,0));
         clockArrayList.add(addClock(0,0));
         clockArrayList.add(addClock(0,0));
         clockArrayList.add(addClock(0,0));
-        /*SharedPreferences sp = getContext().getSharedPreferences("SP_CLOCK",MODE_PRIVATE);                     //创建sp对象,如果有key为"SP_PEOPLE"的sp就取出
-        String clockJson = sp.getString(key,"");
-        if(clockJson!="")  //防空判断
-        {
-            Gson gson = new Gson();
-            Clock clock=new Clock();
-            // Toast.makeText(getApplicationContext(),clockJson,Toast.LENGTH_LONG).show();
-            clock = gson.fromJson(clockJson, Clock.class);
-            Toast.makeText(getContext(),0+"fragment"+clock.getTime(),Toast.LENGTH_LONG).show();//将json字符串转换成 people对象            clockArrayList.add(clock);xiaozhiqiang
-        }*/
-
         return clockArrayList;
     }
 
@@ -124,5 +104,11 @@ public class FragmentClock extends Fragment implements View.OnClickListener {
         clockListView.setAdapter(new ClockListAdapter(getActivity(), loadClockList()));
 
     }
-}
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState); // Always call the superclass first
+    }
+
+    }
+
 

@@ -20,7 +20,6 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".AlarmAlert" />
-        <activity android:name=".RemindWayActivity" />
         <activity android:name=".RingActivity" />
         <activity android:name=".SetMyActivity" />
         <activity android:name=".SetAlarmActivity" />

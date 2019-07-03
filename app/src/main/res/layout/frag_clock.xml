@@ -19,17 +19,9 @@
             android:gravity="center_vertical"
 
             android:padding="10dp"
-            android:text="@string/clock"
-            android:textSize="@dimen/fontsize50" />
+            android:text="闹铃"
+            android:textSize="@dimen/fontsize30" />
 
-        <ImageView
-            android:id="@+id/clockadd"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="17dp"
-            android:src="@android:drawable/ic_input_add"/>
     </RelativeLayout>
 
     <ListView

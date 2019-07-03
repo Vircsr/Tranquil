@@ -86,9 +86,9 @@ public class ClockListAdapter extends BaseAdapter {
         c.set(Calendar.HOUR_OF_DAY,hour);
         c.set(Calendar.MINUTE,minute);
         Intent i = new Intent(context, CallAlarm.class);
-       // String str=ring+"th";
-       // Toast.makeText(context,str,Toast.LENGTH_LONG).show();
-       // i.putExtra("RING",str);
+       String str=ring+"th";
+        Toast.makeText(context,str,Toast.LENGTH_LONG).show();
+        i.putExtra("RING",str);
         PendingIntent sender = PendingIntent.getBroadcast(context,position, i, 0);
         AlarmManager am;
         am = (AlarmManager)context.getSystemService(ALARM_SERVICE);
@@ -98,7 +98,7 @@ public class ClockListAdapter extends BaseAdapter {
         else {
             am.setRepeating(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(),times,sender);
         }
-        // Toast.makeText(context,"设置闹钟为"+ hour+":"+minute, Toast.LENGTH_SHORT).show();
+         Toast.makeText(context,"设置闹钟为"+ hour+":"+minute, Toast.LENGTH_SHORT).show();
         }
 
 

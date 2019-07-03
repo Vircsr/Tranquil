@@ -16,8 +16,8 @@ public class AlarmAlert extends Activity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        //mediaPlayer = MediaPlayer.create(this, R.raw.clockmusic2 );
-       /* String ring=this.getIntent().getStringExtra("RING");
+        mediaPlayer = MediaPlayer.create(this, R.raw.clockmusic2 );
+       String ring=this.getIntent().getStringExtra("RING");
         switch(ring){
             case "1th":
                 mediaPlayer = MediaPlayer.create(this, R.raw.music_1 );
@@ -50,7 +50,7 @@ public class AlarmAlert extends Activity
                 mediaPlayer = MediaPlayer.create(this, R.raw.music_1 );
                 break;
 
-        }*/
+        }
         mediaPlayer.start();
         alertDialog =new AlertDialog.Builder(AlarmAlert.this)
                 .setTitle("闹钟!!")
